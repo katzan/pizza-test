@@ -1,0 +1,41 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-19 13:25:15
+project --topLevelPackage com.katz.test.pizza --projectName pizza-test --java 6 --packaging JAR
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-10-19 13:25:26
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-19 13:25:29
+jpa setup --provider ECLIPSELINK --database H2_IN_MEMORY
+entity jpa --class ~.domain.Base --activeRecord false --testAutomatically
+field string --fieldName name --sizeMin 2 --notNull
+entity jpa --class ~.domain.Topping --activeRecord false --testAutomatically
+field string --fieldName name --sizeMin 2 --notNull
+entity jpa --class ~.domain.Pizza --activeRecord false --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName price --type java.math.BigDecimal
+field set --fieldName toppings --type ~.domain.Topping
+field reference --fieldName base --type ~.domain.Base
+entity jpa --class ~.domain.PizzaOrder --testAutomatically --activeRecord false --identifierType ~.domain.PizzaOrderPk
+field string --fieldName name --notNull --sizeMin 2
+field string --fieldName address --sizeMax 30
+field number --fieldName total --type java.math.BigDecimal
+field date --fieldName deliveryDate --type java.util.Date
+field set --fieldName pizzas --type ~.domain.Pizza
+field string --fieldName shopCountry --class ~.domain.PizzaOrderPk
+field string --fieldName shopCity
+field string --fieldName shopName
+repository jpa --interface ~.repository.ToppingRepository --entity ~.domain.Topping
+repository jpa --interface ~.repository.BaseRepository --entity ~.domain.Base
+repository jpa --interface ~.repository.PizzaRepository --entity ~.domain.Pizza
+repository jpa --interface ~.repository.PizzaOrderRepository --entity ~.domain.PizzaOrder
+service --interface ~.service.ToppingService --entity ~.domain.Topping
+service --interface ~.service.BaseService --entity ~.domain.Base
+service --interface ~.service.PizzaService --entity ~.domain.Pizza
+service --interface ~.service.PizzaOrderService --entity ~.domain.PizzaOrder
+json all --deepSerialize
+web mvc json setup
+web mvc json all --package ~.web
+web mvc setup
+web mvc all --package ~.web
+// script pizzashop.roo
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-10-20 21:03:55
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-20 21:07:33
+help
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-10-22 23:48:26

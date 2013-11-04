@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create compositePkField="id" id="fc_com_katz_test_pizza_domain_PizzaOrder" modelAttribute="pizzaOrder" path="/pizzaorders" render="${empty dependencies}" z="389+3GNHPM4YVDrp75CSckC99EI=">
+        <field:input disableFormBinding="true" field="id.shopCountry" id="c_com_katz_test_pizza_domain_PizzaOrder_id_shopCountry" z="9X7gbIc/u9w+7Pv+zZyCUll2HlY="/>
+        <field:input disableFormBinding="true" field="id.shopCity" id="c_com_katz_test_pizza_domain_PizzaOrder_id_shopCity" z="2UD2n1H5VZWUgoFfMDoyMTUbHQw="/>
+        <field:input disableFormBinding="true" field="id.shopName" id="c_com_katz_test_pizza_domain_PizzaOrder_id_shopName" z="JheMcMO33QzUFBlW+2E+gF6zAEs="/>
+        <field:input field="name" id="c_com_katz_test_pizza_domain_PizzaOrder_name" min="2" required="true" z="H2gnReK8wTh5MOO+x6lvdQBEKtQ="/>
+        <field:input field="address" id="c_com_katz_test_pizza_domain_PizzaOrder_address" max="30" z="x3hZqx2f/DssVLSIYyMRDJEPIt0="/>
+        <field:input field="total" id="c_com_katz_test_pizza_domain_PizzaOrder_total" validationMessageCode="field_invalid_number" z="tDkUx3M45mfBJSh/2Uu6juFGo4E="/>
+        <field:datetime dateTimePattern="${pizzaOrder_deliverydate_date_format}" field="deliveryDate" id="c_com_katz_test_pizza_domain_PizzaOrder_deliveryDate" z="MyqPKvoGYv/RilD6W6lJfVuMQzs="/>
+        <field:select field="pizzas" id="c_com_katz_test_pizza_domain_PizzaOrder_pizzas" itemValue="id" items="${pizzas}" multiple="true" path="/pizzas" z="3YfugVOg6GKZOBuVYbcNxN7ohSU="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_katz_test_pizza_domain_PizzaOrder" render="${not empty dependencies}" z="C0rTJP1y3xtNs8smEcitT7yN2BY="/>
+</div>
