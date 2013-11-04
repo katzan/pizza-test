@@ -1,5 +1,6 @@
 package com.katz.test.pizza.domain;
 
+/** Just a little comment for testing **/
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.springframework.roo.addon.javabean.RooJavaBean;
